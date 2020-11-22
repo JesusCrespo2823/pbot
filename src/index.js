@@ -1,7 +1,6 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
 const config = require('./config.json')
-const mantener = require('./server.js')
 const fs = require('fs')
 
 client.comandos = new Discord.Collection()
@@ -53,5 +52,4 @@ client.on('guildCreate', guild => {
 	client.channels.cache.get('779356432113336350').send(`Nuevo servidor: ${guild.name}\n Este servidor cuenta con: ${guild.memberCount} miembros`)
 })
 
-mantener()
 client.login(config.token)
