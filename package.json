@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.4.1",
+    "express": "^4.17.1",
     "mega-dtbs": "^0.1.17"
   },
   "devDependencies": {

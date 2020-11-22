@@ -1,6 +1,7 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
 const config = require('./config.json')
+const mantener = require('./server.js')
 const fs = require('fs')
 
 client.comandos = new Discord.Collection()
@@ -39,4 +40,5 @@ client.on('message', async (message) => {
   cmd(client, message, args)
 })
 
+mantener()
 client.login(config.token)
