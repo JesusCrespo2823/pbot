@@ -24,20 +24,33 @@ for(const file of fs.readdirSync(__dirname + '/comandos/')) {
   }
 }
 
-const prefix = "p/"
+const prefix = config.prefix
 
 client.on('ready', () => {
     console.log('PBot al servicio ;v')
+    const estados = [
+    	`${client.guilds.cache.size} servidores | p/bot`,
+    	`A ser desarrollado por P I N G U y Jhonso uwu`,
+    	`A como ser cool`
+    ]
+    setInterval(() => {
+    	client.user.setPresence({ activity: { name: estados[(Math.floor(Math.random() * estados.length ))] }, status: 'online', type: "WATCHING" })
+    }, 5000);	
 })
 
 client.on('message', async (message) => {
 
+  if(!message.content.startsWith(prefix)) return;
   const args = message.content.slice(prefix.length).split(/ +/)
   const command = args.shift().toLowerCase()
 
   let cmd = client.comandos.get(command)
   if(!cmd) return;
   cmd(client, message, args)
+})
+
+client.on('guildCreate', guild => {
+	client.channels.cache.get('779356432113336350').send(`Nuevo servidor: ${guild.name}\n Este servidor cuenta con: ${guild.memberCount} miembros`)
 })
 
 mantener()

@@ -6,7 +6,7 @@ module.exports = async (client, message, args) => {
 
 	let user = message.mentions.members.first()
 	let razon = args.slice(1).join(' ')
-	let syntax = "```ini\n" + "" + "[ p/mute <@user> <razon> ]```"
+	let syntax = "```ini\n" + "" + "[ >mute <@user> <razon> ]```"
 	
 	if(!user) return message.channel.send('Por favor, asegurate de escribir bien el comando'+syntax)
 	if(!razon) return message.channel.send('Por favor, asegurate de escribir bien el comando'+syntax)

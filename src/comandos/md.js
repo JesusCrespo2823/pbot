@@ -1,7 +1,7 @@
 module.exports = (client, message, args) => {
 	let md = args.slice(1).join(' ')
 	let user = message.mentions.users.first()
-	let syntax = '```ini\n' + "" + "[ p/md <@user> <mensaje> ]```"
+	let syntax = '```ini\n' + "" + "[ >md <@user> <mensaje> ]```"
 
 	if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.channel.send('No tienes permisos suficientes para usar este comando')
 	if (!md) return message.channel.send('Por favor, asegurate de escribir bien el comando: '+syntax)

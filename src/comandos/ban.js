@@ -4,7 +4,7 @@ module.exports = async (client, message, args)=>{
 	if(!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send('No tienes suficientes permisos para usar este comando')
 	let member = message.mentions.users.first()
 	let razon = args.slice(1).join(' ')
-	let syntax = '```ini\n' + "" + "[ p/ban <@user> <razon> ]```"
+	let syntax = '```ini\n' + "" + "[ >ban <@user> <razon> ]```"
 
 	if(!member) return message.channel.send('Por favor, asegurate de escribir bien el comando: '+syntax)
 	if(!razon){
